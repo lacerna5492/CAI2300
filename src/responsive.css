@@ -1,0 +1,81 @@
+/* Responsive layer: the design export is desktop-first (1440px) with inline
+   grid layouts. These rules adapt it for tablets and phones. */
+
+@media (max-width: 1080px) {
+  .cm-root nav[aria-label="Primary"] { gap: 18px !important; }
+  .cm-root .cm-navlink { font-size: 14px; }
+}
+
+@media (max-width: 900px) {
+  .cm-root nav[aria-label="Primary"] { display: none !important; }
+
+  /* typography (mirrors the design's .cm-mobile scale) */
+  .cm-root .cm-display { font-size: 48px; }
+  .cm-root .cm-h1 { font-size: 40px; }
+  .cm-root .cm-h2 { font-size: 32px; }
+  .cm-root .cm-h3 { font-size: 26px; }
+  .cm-root .cm-container { padding: 0 16px; }
+  .cm-root .cm-section { padding: 64px 0; }
+  .cm-root section[id] { scroll-margin-top: 68px; }
+  .cm-root .cm-modal { padding: 24px !important; }
+
+  /* collapse every inline multi-column grid to a single column */
+  .cm-root [style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
+  .cm-root [style*="grid-column: span"] { grid-column: auto !important; }
+
+  /* hero */
+  #hero { min-height: 0 !important; }
+  #hero .cm-container { padding-top: 32px !important; padding-bottom: 48px !important; }
+  #hero .cm-card[style*="position: absolute"] { left: 0 !important; top: 24px !important; }
+  #hero .cm-phone { width: min(340px, 100%) !important; }
+
+  /* stylist demo */
+  #stylist .cm-card > div:first-child { border-right: 0 !important; border-bottom: 1px solid var(--cm-border); padding: 20px !important; }
+  #stylist .cm-card > div:last-child { min-height: 560px !important; }
+  #stylist .cm-thread { padding: 20px !important; }
+  #stylist [aria-label="Items in the selected sample closet"] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 12px !important; max-height: 300px !important; }
+  #stylist .cm-card > div:last-child > div:first-child,
+  #stylist .cm-card > div:last-child > div:last-child { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* how it works */
+  #how ol li { min-height: 0 !important; padding: 16px 0 !important; }
+  #how ol + div { position: static !important; padding-top: 0 !important; }
+  #how .cm-card { padding: 20px !important; }
+  #how .cm-card > div[style*="align-items: center; gap: 16px"] { flex-wrap: wrap; }
+
+  /* calculator */
+  #calculator .cm-card-flat { padding: 24px !important; }
+  #calculator .cm-card p[style*="font-size: 112px"] { font-size: 72px !important; }
+
+  /* features / cards */
+  #features article { padding: 24px !important; }
+  #privacy ul { grid-template-columns: minmax(0, 1fr) !important; }
+
+  /* pricing */
+  #pricing article { padding: 28px !important; transform: none !important; }
+  .cm-toggle-btn { padding: 0 14px; }
+
+  #final { padding: 96px 0 !important; }
+  #final .cm-orb { width: 420px !important; height: 420px !important; }
+
+  /* footer */
+  .cm-footer > .cm-container > div:first-child { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .cm-footer > .cm-container > div:first-child > div:first-child { grid-column: 1 / -1 !important; }
+
+  .cm-gradient-band::before { background: linear-gradient(165deg, rgba(43,30,63,0.94) 0%, rgba(43,30,63,0.86) 55%, rgba(43,30,63,0.62) 100%); }
+  .cm-aurora { background: radial-gradient(60% 30% at 70% 62%, #A85C7A 0%, rgba(168,92,122,0) 70%), radial-gradient(55% 28% at 30% 80%, #F2B880 0%, rgba(242,184,128,0) 70%), radial-gradient(50% 25% at 80% 92%, #E07A5F 0%, rgba(224,122,95,0) 70%); }
+  .cm-toast { bottom: 24px; }
+}
+
+@media (max-width: 480px) {
+  .cm-root .cm-display { font-size: 42px; }
+  .cm-root header .cm-btn { padding: 0 16px; min-height: 44px; font-size: 15px; }
+  #stylist [aria-label="Items in the selected sample closet"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .cm-footer > .cm-container > div:first-child { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* comparison table: keep columns readable and let it scroll sideways */
+@media (max-width: 900px) {
+  #solution table { min-width: 720px; }
+  #solution .cm-reveal[style*="overflow-x"] { margin: 0 -16px; padding: 0 16px 8px; -webkit-overflow-scrolling: touch; }
+}
