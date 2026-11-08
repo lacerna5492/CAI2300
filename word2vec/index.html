@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Word2Vec Explorer — ClosetMuse NLP lab</title>
+    <meta name="description" content="Explore a Word2Vec model trained on ~10M words: find the 10 closest words to any word and see the neighbourhood in 2D and 3D." />
+    <meta name="theme-color" content="#5B3A70" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="preload" href="/word2vec/vectors.bin" as="fetch" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/word2vec/main.jsx"></script>
+  </body>
+</html>

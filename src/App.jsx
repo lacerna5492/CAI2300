@@ -1114,6 +1114,9 @@ export default class App extends React.Component {
               <a className="cm-navlink" href="#faq">
                 FAQ
               </a>
+              <a className="cm-navlink" href="/word2vec/">
+                Word2Vec lab
+              </a>
             </nav>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
               <button type="button" className="cm-icon-btn" aria-label={v.themeLabel} onClick={v.toggleTheme}>
@@ -3007,6 +3010,9 @@ export default class App extends React.Component {
                 </a>
                 <a href="#faq">
                   FAQ
+                </a>
+                <a href="/word2vec/">
+                  Word2Vec lab
                 </a>
               </nav>
               <nav aria-label="Company" style={{ display: "flex", flexDirection: "column", gap: "14px" }}>

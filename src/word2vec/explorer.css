@@ -1,0 +1,37 @@
+/* Word2Vec explorer page — builds on the ClosetMuse tokens in styles.css */
+.w2v code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; background: var(--cm-mist); padding: 2px 6px; border-radius: 6px; }
+.w2v-stats { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.w2v-stats li { padding: 6px 14px; border-radius: 9999px; background: var(--cm-surface); border: 1px solid var(--cm-border); font-size: 14px; color: var(--cm-slate); }
+.w2v-stats b { color: var(--cm-ink); font-weight: 600; }
+.w2v-searchrow { display: flex; gap: 12px; align-items: stretch; }
+.w2v-sug { position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; right: 0; margin: 0; padding: 6px; list-style: none; background: var(--cm-surface); border: 1px solid var(--cm-border); border-radius: 14px; box-shadow: var(--cm-shadow); max-height: 300px; overflow: auto; }
+.w2v-sug li { padding: 10px 12px; border-radius: 10px; cursor: pointer; color: var(--cm-ink); font-size: 15px; }
+.w2v-sug li:hover, .w2v-sug li.on { background: var(--cm-mist); }
+.w2v-chip { min-height: 38px; padding: 0 14px; font-size: 13px; }
+.w2v-chip[disabled] { opacity: 0.5; cursor: default; transform: none; }
+.w2v-analogy { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.w2v-analogy .cm-input { width: 180px; flex: 1 1 140px; }
+.w2v-op { font-size: 28px; font-weight: 300; color: var(--cm-accent); width: 20px; text-align: center; }
+.w2v-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.w2v-list { padding: 22px 24px; }
+.w2v-list ol { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; }
+.w2v-list li { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(60px, 1fr) 48px; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid var(--cm-border); }
+.w2v-rank { font-size: 12px; color: var(--cm-slate); font-variant-numeric: tabular-nums; }
+.w2v-word { background: none; border: 0; padding: 0; text-align: left; font: 500 15px/1.3 Inter, system-ui, sans-serif; color: var(--cm-ink); cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-height: 28px; }
+.w2v-word:hover { color: var(--cm-accent); text-decoration: underline; text-underline-offset: 3px; }
+.w2v-bar { height: 6px; border-radius: 999px; background: var(--cm-mist); overflow: hidden; }
+.w2v-bar > span { display: block; height: 100%; border-radius: 999px; transition: width 400ms var(--cm-ease); }
+.w2v-sim { font-size: 13px; color: var(--cm-slate); text-align: right; font-variant-numeric: tabular-nums; }
+.w2v-about { display: flex; flex-direction: column; gap: 28px; }
+.w2v-about-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 900px) {
+  .w2v-nav { display: none !important; }
+  .w2v-about-grid { grid-template-columns: minmax(0, 1fr); }
+  .w2v .cm-badge { display: none; }
+}
+@media (max-width: 600px) {
+  .w2v-searchrow { flex-direction: column; }
+  .w2v-analogy .cm-input { width: 100%; flex-basis: 100%; }
+  .w2v-op { width: 100%; text-align: left; line-height: 1; }
+  .w2v .cm-btn-secondary { display: none; }
+}
